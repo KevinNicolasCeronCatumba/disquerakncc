@@ -1,0 +1,178 @@
+/*--------CUERPO BODY----------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+    display: grid;
+    place-content: center;
+    color: white;
+    width: 100%;
+    height: 100vh;
+
+    background-image: linear-gradient(
+        to bottom right,
+        #3500af 0%,
+        #A900C8 20%,
+        #830d0d 40%,
+        #50015e 60%,
+        #730087 80%
+    );
+
+    background-size: 200% 200%;
+    
+    animation: movimiento 7s linear infinite alternate;
+}
+
+@keyframes movimiento {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 100% 100%;
+    }
+}
+/*----------FORMULARIO FORM-----------*/
+.formulario{
+    color: black;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+
+    background-image: linear-gradient(
+        to bottom right,
+        #7e7e7e 0%,
+        #e0e0e0 20%,
+        #e2e2e2 40%,
+        #dddddd 60%,
+        #b3b3b3 80%
+    );
+
+    background-size: 200% 200%;
+    
+    animation: movimiento 7s linear infinite alternate;
+}
+form div{
+    align-items: center;
+    margin: 2%;
+    text-align: center;
+    
+}
+
+.content-select input{
+	cursor: pointer;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #ffffff;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.content-select select{
+	cursor: pointer;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #ffffff;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.content-select select:hover{
+	background: #f2e7f5;
+    border-radius: 2px;
+}
+.content-select i{
+	display: block;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+.content-select:hover i{
+	margin-top: 3px;
+}
+
+
+
+.submitBtn {
+    padding: 15px 30px;
+    border: none;
+    background-color: rgb(138, 32, 138);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.submitBtn:hover {
+    background-color: #c2a5dd;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+/*----------TABLA TABLE-----------*/
+
+.conten{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.tabla{
+    color: black;
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+
+
+
+
+    background-image: linear-gradient(
+        to bottom right,
+        #7e7e7e 0%,
+        #e0e0e0 20%,
+        #e2e2e2 40%,
+        #dddddd 60%,
+        #b3b3b3 80%
+    );
+
+    background-size: 200% 200%;
+    
+    animation: movimiento 5s linear infinite alternate;
+
+
+}

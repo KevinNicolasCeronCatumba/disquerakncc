@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmls:th="https://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>GENERO DISCOKENI</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" th:href="@{/css/CssGenero.css}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+   <body>
+        <div>
+            <div class="formulario">
+                <form th:action="@{/genero/add}" th:object="${genero}"  method="post">
+                    <div>
+                        <h3 th:text="${accion}"></h3>
+                    </div>
+                    <div class="content-input">
+                        <label>NOMBRE DEL GENERO</label>
+                        <input type="text" name="NombreGenero" id="NombreGenero" th:field="*{NombreGenero}">
+                        <div class="form-text text-danger" th:if="${#fields.hasErrors('NombreGenero')}" th:errors="*{NombreGenero}"></div>
+                    </div>
+                    <div class="content-select">
+                        <label>ESTADO GENERO</label>
+                        <input type="checkbox" name="EstadoGenero" id="EstadoGenero" checked th:field="*{EstadoGenero}" class="form-check-input">
+                    </div>
+                    <div>
+                        <button type="submit" class="submitBtn">Guardar</button>
+                    </div>
+                </form>
+                <button type="button" name="control" class="submitBtn btn-light" onclick="window.location='/genero/listgenero'">Regresar</button>
+            </div>
+        </div>
+    </body>
+</html>
