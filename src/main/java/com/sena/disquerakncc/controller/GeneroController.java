@@ -2,9 +2,6 @@ package com.sena.disquerakncc.controller;
 
 import javax.validation.Valid;
 
-import com.sena.disquerakncc.model.Genero;
-import com.sena.disquerakncc.model.IGenero;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-@RequestMapping("/genero")
+import com.sena.disquerakncc.model.Genero;
+import com.sena.disquerakncc.service.GeneroService;
+
 @Controller
-@SessionAttributes("cliente")
+@SessionAttributes("genero")
+@RequestMapping("/genero")
 public class GeneroController {
     @Autowired
-    private IGenero generod;
+    private GeneroService generod;
 
     @GetMapping(path = {"/listgenero","","/"})
     public String listGenero(Model m){

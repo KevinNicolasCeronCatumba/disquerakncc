@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://wwww.thymeleaf.org" lang="en">
+<head>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>ALBUM DISCOKENI</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" th:href="@{/css/CssGenero.css}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mobius1/vanilla-Datatables@latest/vanilla-dataTables.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mobius1/vanilla-Datatables@latest/vanilla-dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="conten">
+        <div class="tabla">
+            <div>
+                <h3>ALBUM</h3> 
+                <button type="button" name="control" class="submitBtn btn-light" onclick="window.location='form'">NUEVO</button>
+                <button type="button" name="control" class="submitBtn btn-light" onclick="window.location='../index'">INICIO</button>   
+            </div>
+                <div th:if="${albunes.size()==0}" class="alert alert-warning alert-dismissible fade show" role="alert">No hay disquera para mostrar
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <table class="table table-striped">
+                <!--<thead>-->
+                    <th>ID</th>
+                    <th>NOMBRE ALUM</th>
+                    <th>AÑO PUBLICACION</th>
+                    <th>NOMBRE GENERO</th>
+                    <th>NOMBRE ARTISTA</th>
+                    <th>ESTADO</th>
+                    <th>ACCION</th>
+                <!--</thead>-->
+                <!--<tbody>-->
+                <tr th:if="${albunes.size()>0}" th:each="a:${albunes}">
+                    <td th:text="${a.IdAlbum}"></td>
+                    <td th:text="${a.NombreAlbum}"></td>
+                    <td th:text="${a.AnPuAlbum}"></td>
+                    <td th:text="${a.genero.NombreGenero}"></td>
+                    <td th:text="${a.artista.NombreArtista}"></td>
+                    <!---->
+                    <td th:if="${a.EstadoAlbum==true}">
+                        <span class="badge bg-success active">Activo</span>
+                    </td>
+                    <td th:if="${a.EstadoAlbum==false}">
+                        <span class="badge bg-danger active">Inactivo</span>
+                    </td>
+                    <!---->
+                    <td>
+                        <a disquera="button" class="btn btn-info" th:href="@{/album/ver/}+${a.IdAlbum}">EDITAR</a>
+                        
+                        <a disquera="button" class="btn btn-danger" th:href="@{/album/delete/} + ${a.IdAlbum}" onclick="return confirm('Estás seguro que quieres eliminar este album?');">ELIMINAR</a>
+                    </td>
+                </tr>
+                <!--</tbody>-->
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
